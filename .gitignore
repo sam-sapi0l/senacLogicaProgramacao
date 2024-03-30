@@ -1,4 +1,5 @@
 #############################
-senacLogicaProgramacao/.gitignore
-senacLogicaProgramacao/venv/*
+.gitignore
+venv/*
 
+.gitignore
