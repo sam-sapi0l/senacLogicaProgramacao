@@ -23,4 +23,4 @@ if calcula_idade >= 18:
     print("Cadidato aprovado por atender requisitos de idade.")
 else:
     print("Não atende os requisitos de idade")
-    
+   

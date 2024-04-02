@@ -3,6 +3,7 @@
 
 '''
 import re
+
 letra_digitada = input("Digite uma letra: ")
 vogal = ['a','e','i','o','u']
 alfabeto = re.findall("[a-zA-Z]", letra_digitada)
