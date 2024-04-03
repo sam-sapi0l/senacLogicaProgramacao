@@ -17,9 +17,62 @@
 '''
 
 nome = input('Digite seu nome: ')
-salario_bruto = float(input('Digite seu salário: '))
+valor_hora = float(input('Digite valor/h: '))
+quantidade_hora = float(input('Digite seu número de horas trabalhadas: '))
+calcula_salario_bruto = valor_hora * quantidade_hora
 
-
-if salario_bruto <= 900:
-    print(f'Você está isento de desconto, devido salário ser R${salario_bruto}')
-elif salario_bruto > 900 and 
+if calcula_salario_bruto <= 900:
+    calcula_desconto_imposto_de_renda = calcula_salario_bruto * 0.05
+    calcula_desconto_inss = calcula_salario_bruto * 0.1
+    calcula_desconto_fgts = calcula_salario_bruto * 0.11
+    total_descontos = calcula_desconto_fgts + calcula_desconto_inss + calcula_desconto_imposto_de_renda + calcula_desconto_inss
+    calcula_salario_liquido =  calcula_salario_bruto - calcula_desconto_fgts - calcula_desconto_inss
+    print(f'Colaborador: {nome}')
+    print('Isento de descontos de Imposto de Renda')
+    print(f'Salário Bruto: R${calcula_salario_bruto}')
+    print(f'(-) IR (0%)                  :R$ 0,00')   
+    print(f'(-) INSS (10%)               :R${calcula_desconto_inss}')
+    print(f'FGTS (11%)                   :R${calcula_desconto_fgts} ')
+    print(f'Totais de Descontos          :R${total_descontos}')
+    print(f'Salário Liquido              :R${calcula_salario_liquido}')
+elif calcula_salario_bruto > 900 and calcula_salario_bruto < 1500:
+    calcula_desconto_imposto_de_renda = calcula_salario_bruto * 0.05
+    calcula_desconto_inss = calcula_salario_bruto * 0.05
+    calcula_desconto_fgts = calcula_salario_bruto * 0.11
+    total_descontos = calcula_desconto_fgts + calcula_desconto_inss + calcula_desconto_imposto_de_renda + calcula_desconto_inss
+    calcula_salario_liquido =  calcula_salario_bruto - calcula_desconto_fgts - calcula_desconto_inss
+    print(f'Colaborador: {nome}')
+    print(f'Salário Liquido: R${calcula_salario_bruto}')
+    print(f'(-) IR (5%)                  :R${calcula_desconto_imposto_de_renda}')   
+    print(f'(-) INSS (10%)               :R${calcula_desconto_inss}')
+    print(f'FGTS (11%)                   :R${calcula_desconto_fgts} ')
+    print(f'Totais de Descontos          :R${total_descontos}')
+    print(f'Salário Liquido              :R${calcula_salario_liquido}')
+elif calcula_salario_bruto >= 1500 and calcula_salario_bruto < 2500:
+    calcula_desconto_imposto_de_renda = calcula_salario_bruto * 0.05
+    calcula_desconto_inss = calcula_salario_bruto * 0.10
+    calcula_desconto_fgts = calcula_salario_bruto * 0.11
+    total_descontos = calcula_desconto_fgts + calcula_desconto_inss + calcula_desconto_imposto_de_renda
+    calcula_salario_liquido =  calcula_salario_bruto - calcula_desconto_fgts - calcula_desconto_inss
+    print(f'Colaborador: {nome}')
+    print(f'Salário Liquido: R${calcula_salario_bruto}')
+    print(f'(-) IR (5%)                  :R${calcula_desconto_imposto_de_renda}')   
+    print(f'(-) INSS (10%)               :R${calcula_desconto_inss}')
+    print(f'FGTS (11%)                   :R${calcula_desconto_fgts} ')
+    print(f'Totais de Descontos          :R${total_descontos}')
+    print(f'Salário Liquido              :R${calcula_salario_liquido}')
+elif calcula_salario_bruto >= 2500:
+    calcula_desconto_imposto_de_renda = calcula_salario_bruto * 0.20
+    calcula_desconto_inss = calcula_salario_bruto * 0.10
+    calcula_desconto_fgts = calcula_salario_bruto * 0.11
+    total_descontos = calcula_desconto_fgts + calcula_desconto_inss + calcula_desconto_imposto_de_renda
+    calcula_salario_liquido =  calcula_salario_bruto - calcula_desconto_fgts - calcula_desconto_inss - calcula_desconto_imposto_de_renda
+    print(f'Colaborador: {nome}')
+    print(f'Salário Liquido: R${calcula_salario_bruto}')
+    print(f'(-) IR (20%)                  :R${calcula_desconto_imposto_de_renda}')   
+    print(f'(-) INSS (10%)               :R${calcula_desconto_inss}')
+    print(f'FGTS (11%)                   :R${calcula_desconto_fgts} ')
+    print(f'Totais de Descontos          :R${total_descontos}')
+    print(f'Salário Liquido              :R${calcula_salario_liquido}')
+else:
+    print('Valor inválido!')
