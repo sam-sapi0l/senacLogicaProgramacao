@@ -17,20 +17,30 @@ nota2 = float(input('Nota 2: '))
 conceitos = ['A', 'B', 'C', 'D', 'E']
 media = (nota1 + nota2) / 2
 
-if media <= 4:
+if media >= 0 and media <= 4:
+    print(f'Nome do Aluno: {nome}')
     print(f'Média: {media}')
     print(f'Conceito: {conceitos[4]}')
+    print(f'REPROVADO')
 elif media > 4 and media <= 6:
+    print(f'Nome do Aluno: {nome}')
     print(f'Média: {media}')
     print(f'Conceito: {conceitos[3]}')
+    print(f'REPROVADO')
 elif media > 6 and media <= 7.5:
+    print(f'Nome do Aluno: {nome}')
     print(f'Média: {media}')
     print(f'Conceito: {conceitos[2]}')
+    print(f'APROVADO')
 elif media > 7.5 and media < 9:
+    print(f'Nome do Aluno: {nome}')
     print(f'Média: {media}')
     print(f'Conceito: {conceitos[1]}')
+    print(f'APROVADO')
 elif media >= 9 and media <= 10:
+    print(f'Nome do Aluno: {nome}')
     print(f'Média: {media}')
     print(f'Conceito: {conceitos[0]}')
+    print(f'APROVADO')
 else:
     print('Valor Inválido!')
