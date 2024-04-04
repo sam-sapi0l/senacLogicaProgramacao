@@ -24,4 +24,4 @@ elif dia_digitado == 6:
 elif dia_digitado == 7:
     print(f'{dia[6]}')
 else:
-    print('Valor inválido!')       
+    print('Valor inválido!')
