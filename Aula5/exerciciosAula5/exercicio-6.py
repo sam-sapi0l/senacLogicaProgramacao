@@ -13,13 +13,6 @@ for var_numero in range(1, 11):
     for numero in lista:
         soma = sum(lista)
         soma_itens = numero + numeros
-        media = soma / 2
-print(soma)
+        media = soma / 10
 print(f'A soma dos elementos é: {soma}')
 print(f'A média é: {media}')
-#media = soma / 2
-#print(soma)
-#print(media)
-       
-        
-
