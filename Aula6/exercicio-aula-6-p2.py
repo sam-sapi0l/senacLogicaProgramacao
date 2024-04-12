@@ -17,22 +17,23 @@ lista.append(nota2)
 print(lista)
 media = (nota + nota2) / 2
 contador = 1
-while contador <= 3: 
+while contador < 3: 
     if media >= 7:
         print(f'Nome do aluno: {lista[0]}')
         print(f'Primeira nota do aluno: {lista[1]}')
         print(f'Segunda nota do aluno: {lista[2]}')
         print(f'Média: {media}')
         print(f'APROVADO')
+        print(f'Número total de tentativas: {contador} / 3')
         break
     elif media < 7:
+        print(f'Tentativas: {contador} / 3')
         print(f'Nome do aluno: {lista[0]}')
         print(f'Primeira nota do aluno: {lista[1]}')
         print(f'Segunda nota do aluno: {lista[2]}')
         print(f'Média: {media}')
         print(f'REPROVADO')
         contador += 1
-        print(f'Tentativas: {contador} / 3')
 
         lista = []
         nome = input('Digite o nome do aluno: ')
@@ -48,4 +49,8 @@ while contador <= 3:
     else:
         print('Inválido!')
 else:
+    print(f'Aluno: {lista[0]}')
+    print(f'Média: {media}')
+    print(f'Total de tentativas esgotado! Tentativas: {contador} / 3')
+    print('REPROVADO')
     print('FIM!')
