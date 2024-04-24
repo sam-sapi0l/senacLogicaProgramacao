@@ -1,0 +1,6 @@
+.gititnore
+.env
+.venv
+env
+venv
+/.gitignore
