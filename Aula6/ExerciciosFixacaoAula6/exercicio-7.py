@@ -3,6 +3,7 @@ Adivinhe o Número com Loop While e if: Implemente um jogo em que o programa ger
 '''
 
 import random
+
 x = random.random()
 y = int(x*100)
 numero_usuario = int(input('Escolha um número entre 1 e 100: '))
@@ -18,3 +19,4 @@ else:
     print(f'Número: {y}')
     print(f'Número digitado: {numero_usuario}')
     print('Acertou!')
+    
