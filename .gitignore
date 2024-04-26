@@ -1,7 +1,8 @@
-.gititnore
 .env
 .venv
 env
 venv
-/.gitignore
+env/*
+venv/*
+.vs/*
 .vs
