@@ -6,3 +6,5 @@ env/*
 venv/*
 .vs/*
 .vs
+.vscode
+.vscode/*
