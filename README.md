@@ -1,5 +1,7 @@
-###############################################################################
-#                                                                             #
-#    Conteúdos e exercícios referente a cadeira de lógica de programação      #
-#                                                                             #
-###############################################################################                                                                              
+################################
+#                              #                                               #
+#    Conteúdos e exercícios    #
+#                              #
+################################                                                                              
+
+Desenvolvimento de código python referente à cadeira de lógica de programação Senac
