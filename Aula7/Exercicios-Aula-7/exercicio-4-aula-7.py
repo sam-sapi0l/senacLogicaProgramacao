@@ -9,11 +9,7 @@ lista = []
 vogal = ['a', 'e', 'i', 'o', 'u']
 
 # delimitador de caracteres a serem inseridos
-contador = 1
-
-# input do usuario
-char = input('Digite um caracter: ')
-lista.append(char)
+contador = 0
 
 while  contador < 10:
     while True:
@@ -29,17 +25,22 @@ while  contador < 10:
         
         if contador == 10:
            print(lista)
+           quantidade = 0
            for i in lista:
-            if i not in vogal:
-                print(i)
+                if i not in vogal:
+                    quantidade += 1
+                    print(f'Consoantes:{i}', end=' ')
+                elif i in vogal:
+                    print(f'Vogais: {i}')
+                else:
+                    print('Erro!')
+        else:
+            print('Erro ao imprimir letras!')                     
         break
-            
     else:
         print('FIM DO WHILE')
-    
-    # comparando listas
-     
 else:
+    print(f'Quantidade de Consoantes: {quantidade}')
     print('PROGRAMA ENCERRADO')
 
 
