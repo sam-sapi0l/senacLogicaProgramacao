@@ -2,8 +2,6 @@
 6. Faça um Programa que peça as quatro notas de 10 alunos, calcule e armazene num vetor a média de cada aluno, imprima o número de alunos com média maior ou igual a 7.0.
 
 '''
-from itertools import count
-
 
 # inicializando lista vazia
 lista_aprovado = []
@@ -22,7 +20,7 @@ while True:
         except:
            print('Apenas números!')         
         
-        media = (nota1 + nota2 + nota3 + nota4) / 4
+        media = nota1 + nota2 + nota3 + nota4 / 4
             
         if media >= 7:
             lista_aprovado.append(media)
