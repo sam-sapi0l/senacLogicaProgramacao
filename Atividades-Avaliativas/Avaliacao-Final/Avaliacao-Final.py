@@ -48,15 +48,14 @@ products = []
 prices = []
 stock =  []
 sales = []
-quantity = []
+quantitySold = []
 
 # lista os produtos, preços, estoque e quantidade
 def listProducts():
     print()
     print('#' * 30, 'LIST PRODUCTS', '#' * 30)
     for i in range(len(products)):
-        print('{0} | {1:52f} | {3:5.2f}'.format(products[i].ljust(10), prices[i], stock[i], quantity[i]))
-
+        print('{0} | {1:52f} | {3:5.2f}'.format(products[i].ljust(10), prices[i], stock[i], quantitySold[i]))
 
 #  Incluir Produto:** Permite adicionar um novo produto à lista de produtos, seu preço à lista de preços e quantidade de estoque.
 def addProduct():
@@ -65,13 +64,20 @@ def addProduct():
     # entrada de dados do usuário
     productName = input('Type product name: ')
     productPrice = float(input('Type product price: '))
-    productQuantity = int(input(' Quantity for {productName} to add: '))
-    # adicionando em listas
+    productQuantity = int(input(' quantitySold for {productName} to add: '))
 
+    # adicionando em listas
     products.append(productName.upper())
     prices.append(productPrice)
-    quantity.append(productQuantity)
-    stock.append(productQuantity)
+    # verificando se produto já possui quantidade em estoque e soma com quantidade existente
+    if productName in products:
+       for i in stock:
+            quantitySum = productQuantity + stock.index(i)
+            stock.append(quantitySum)
+            quantitySold.append(quantitySum)
+    else:
+        stock.append(productQuantity)
+        quantitySold.append(productQuantity)
 
 # Incluir Venda:Permite registrar a venda de um produto, selecionando-o da lista de produtos e informando a quantidade vendida e deve abater da quantidade de estoque.
 
@@ -93,14 +99,13 @@ def addSale():
     for i in stock:
        if productName in products: 
            print(f'Product: {productName}')
-           print(f'Quantity: {stock.index(i)}')
+           print(f'quantitySold: {stock.index(i)}')
            print()
            print()
            removeItemQuantity = stock.index(i) - productQuantity
            stock.remove(i)
            stock.append(removeItemQuantity)
-           print(f'Item: {productName}')
-           print(f'Quantity: {removeItemQuantity}')
+           print('{0} | {1:52f} | {3:5.2f}'.format(products[i].ljust(10), prices[i], stock[i], quantitySold[i]))
        else:
            print(f'{productName} not available desired quantity for this item.')
            
