@@ -64,7 +64,7 @@ def searchStudent():
         else:
             print(f'{name} is not ins the student list')
     print('{0} | {1:5.2f} | {3:5.2f}'.format(students[i], weight[i], height[i], imcs[i]))
-# calcula a media total de IMC 
+# calcula a media total de IMC
 def avg_calc():
     listStudents()
     avg_height = sum(height) / len(height)

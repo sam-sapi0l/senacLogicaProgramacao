@@ -64,7 +64,7 @@ def addProduct():
     # entrada de dados do usuário
     productName = input('Type product name: ')
     productPrice = float(input('Type product price: '))
-    productQuantity = int(input(' quantitySold for {productName} to add: '))
+    productQuantity = int(input('Quantity: '))
 
     # adicionando em listas
     products.append(productName.upper())
@@ -99,21 +99,86 @@ def addSale():
     for i in stock:
        if productName in products: 
            print(f'Product: {productName}')
-           print(f'quantitySold: {stock.index(i)}')
+           print(f'Quantity: {stock.index(i)}')
            print()
            print()
            removeItemQuantity = stock.index(i) - productQuantity
            stock.remove(i)
            stock.append(removeItemQuantity)
-           print('{0} | {1:52f} | {3:5.2f}'.format(products[i].ljust(10), prices[i], stock[i], quantitySold[i]))
+           productSold = productPrice * productQuantity
+           print('{0} | {1:52f} | {3:5.2f}'.format(products[i].ljust(10), prices[i], stock[i], quantitySold[i], productSold))
        else:
            print(f'{productName} not available desired quantity for this item.')
            
 
-def stockManager():
+def stockReport():
     listProducts()
     print()
-    productName = input('Type product name: ')
+    print('#' * 30, 'STOCK REPORT', '#' * 30)
+    for i in range(len(stock)):
+        print('{0} | {1:52f} | {3:5.2f}'.format(products[i].ljust(10), prices[i], stock[i]))
+
+    
+
+def salesReport():
+    listProducts()
+    print()
+    print('#' * 30, 'SALES REPORT', '#' * 30)
+    for i in range(len(products)):
+        print('{0} | {1:52f} | {3:5.2f}'.format(products[i].ljust(10), prices[i], stock[i], max(quantitySold[i])))
+
+def mostSold():
+    listProducts()
+    print()
+    print('#' * 30, 'SALES REPORT', '#' * 30)
+    for i in range(len(products)):
+        print('{0} | {1:52f} | {3:5.2f}'.format(products[i].ljust(10), prices[i], max(quantitySold[i])))
+
+def avg_sold():
+    for i in products:
+        avg = len(products) / quantitySold[i]
+        print(f'Product Sales Average: {avg}')
+
+
+
+while True:
+    # while para entrada de opção
+    while True:
+        try:
+            print('#' * 30, 'MENU', '#' * 30)
+            print('        1. Add Prouct')
+            print('        2. List all products ')
+            print('        3. Stock Report ')
+            print('        4. Sales Report ')
+            print('        5. Average Sold ')
+            print('        6. Most Sold Product')
+            print('        7. END ')
+            option = int(input('OPTION: '))
+            break
+        except:
+            print('type only INTEGER numbers to select an option.')
+    # se a opção for de 1 a 5 sai do while para o menu do programa
+    if option == 7:
+        break
+    elif option == 1:
+        addProduct()
+        input('[Enter] to continue')
+    elif option == 2:
+        listProducts()
+        input('[Enter] to continue')
+    elif option == 3:
+        stockReport()
+        input('[Enter] to continue')
+    elif option == 4:
+        salesReport()
+        input('[Enter] to continue')
+    elif option == 5:
+        avg_sold()
+        input('[Enter] to continue') 
+    elif option == 6:
+        mostSold()
+        input('[Enter] to continue')
+
     
 
             
